@@ -10,5 +10,5 @@ if last_digit > 5:
     print(f"{message} is greater than 5")
 if last_digit == 0:
     print(f"{message} zero")
-if last_digit < 6:
+elif last_digit < 6:
     print(f"{message} less than 6 and not 0")
