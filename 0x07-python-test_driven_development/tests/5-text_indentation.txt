@@ -1,0 +1,32 @@
+def test_text_indentation():
+    # Test case with only one sentence
+    text = "This is a sentence."
+    expected_output = "This is a sentence.\n"
+    assert text_indentation(text) == expected_output
+
+    # Test case with multiple sentences and different types of punctuation
+    text = "This is a sentence. Another sentence? One more sentence: the last one!"
+    expected_output = "This is a sentence.\n\nAnother sentence?\n\nOne more sentence:\nthe last one!\n"
+    assert text_indentation(text) == expected_output
+
+    # Test case with no punctuation
+    text = "This is a sentence with no punctuation"
+    expected_output = "This is a sentence with no punctuation\n"
+    assert text_indentation(text) == expected_output
+
+    # Test case with leading and trailing spaces
+    text = "   This is a sentence with spaces.  "
+    expected_output = "This is a sentence with spaces.\n"
+    assert text_indentation(text) == expected_output
+
+    # Test case with empty string
+    text = ""
+    expected_output = ""
+    assert text_indentation(text) == expected_output
+
+    # Test case with non-string input
+    text = 123
+    expected_error = "text must be a string"
+    with pytest.raises(TypeError, match=expected_error):
+        text_indentation(text)
+
