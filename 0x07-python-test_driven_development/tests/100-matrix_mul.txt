@@ -1,0 +1,57 @@
+import unittest
+from matrix_mul import matrix_mul
+
+class TestMatrixMul(unittest.TestCase):
+
+    def test_matrix_mul(self):
+        # Test valid multiplication
+        m_a = [[1, 2], [3, 4], [5, 6]]
+        m_b = [[7, 8, 9], [10, 11, 12]]
+        result = matrix_mul(m_a, m_b)
+        expected = [[27, 30, 33], [61, 68, 75], [95, 106, 117]]
+        self.assertEqual(result, expected)
+
+        # Test empty matrices
+        m_a = []
+        m_b = [[]]
+        with self.assertRaises(ValueError) as context:
+            matrix_mul(m_a, m_b)
+        self.assertEqual(str(context.exception), "m_a can't be empty or m_b can't be empty")
+
+        # Test non-list inputs
+        m_a = "not a list"
+        m_b = [[1, 2], [3, 4]]
+        with self.assertRaises(TypeError) as context:
+            matrix_mul(m_a, m_b)
+        self.assertEqual(str(context.exception), "m_a must be a list or m_b must be a list")
+
+        # Test non-list of lists inputs
+        m_a = [[1, 2], 3]
+        m_b = [[1, 2], [3, 4]]
+        with self.assertRaises(TypeError) as context:
+            matrix_mul(m_a, m_b)
+        self.assertEqual(str(context.exception), "m_a must be a list of lists or m_b must be a list of lists")
+
+        # Test non-integer/float inputs
+        m_a = [[1, 2], [3, "four"]]
+        m_b = [[1, 2], [3, 4]]
+        with self.assertRaises(TypeError) as context:
+            matrix_mul(m_a, m_b)
+        self.assertEqual(str(context.exception), "m_a should contain only integers or floats or m_b should contain only integers or floats")
+
+        # Test non-rectangular matrices
+        m_a = [[1, 2], [3, 4, 5], [6, 7, 8]]
+        m_b = [[1, 2], [3, 4], [5, 6]]
+        with self.assertRaises(TypeError) as context:
+            matrix_mul(m_a, m_b)
+        self.assertEqual(str(context.exception), "each row of m_a must be of the same size or each row of m_b must be of the same size")
+
+        # Test matrices that can't be multiplied
+        m_a = [[1, 2], [3, 4]]
+        m_b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        with self.assertRaises(ValueError) as context:
+            matrix_mul(m_a, m_b)
+        self.assertEqual(str(context.exception), "m_a and m_b can't be multiplied")
+
+if __name__ == '__main__':
+    unittest.main()
