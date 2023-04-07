@@ -1,0 +1,35 @@
+# Test Cases for print_square function
+
+# Test case 1: Positive integer size
+>>> print_square(3)
+###
+###
+###
+ 
+# Test case 2: Size = 0
+>>> print_square(0)
+
+# Test case 3: Negative integer size
+>>> print_square(-5)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+# Test case 4: Non-integer size
+>>> print_square(2.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+# Test case 5: Large positive integer size
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
