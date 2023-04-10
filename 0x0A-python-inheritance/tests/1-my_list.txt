@@ -1,0 +1,10 @@
+with open("1-my_list.txt", 'r') as f:
+    content = f.read().splitlines()
+
+# Create MyList instance and populate it with integers from the file
+my_list = MyList()
+for num in content:
+    my_list.append(int(num))
+
+# Print the sorted list
+my_list.print_sorted()
