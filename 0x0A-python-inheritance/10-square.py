@@ -1,21 +1,19 @@
 #!/usr/bin/python3
-""" This module contains the Square class that inherits from Rectangle
-    class from the module 9-rectangle.
-"""
+""" Module that defines a Square class """
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """ A Square class that inherits from Rectangle class """
+    """ Square class that inherits from Rectangle """
+
     def __init__(self, size):
-        """ Constructor method that initializes the size of square """
-        super().__init__(size, size)
+        """ Initializes a new Square instance """
+
         self.__size = size
+        super().__init__(self.__size, self.__size)
 
     def __str__(self):
-        """ Return the square description """
-        return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
+        """ Returns a string representation of a Square """
 
-    def area(self):
-        """ Return the area of the square """
-        return self.__size * self.__size
+        return "[Square] {}/{}".format(self.__size, self.__size)
