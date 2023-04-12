@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Define a student based on their first name,last and age"""
+
 
 class Student:
     """Represents a student"""
