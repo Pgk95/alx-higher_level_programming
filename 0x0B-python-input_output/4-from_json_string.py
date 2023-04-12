@@ -1,4 +1,4 @@
-#!/usr/bin/pytho3
+#!/usr/bin/python3
 
 """Return a Python data structure represented by a JSON string"""
 
