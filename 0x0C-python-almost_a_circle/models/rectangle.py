@@ -20,12 +20,10 @@ class Rectangle(Base):
 
     def width(self):
         """Getter for the width attribute"""
-
         return self.__width
 
     def width(self, value):
         """Setter for the width attribute"""
-
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -35,12 +33,10 @@ class Rectangle(Base):
 
     def height(self):
         """Getter for the height attribute"""
-
         return self.__height
 
     def height(self, value):
         """Setter for the height attribute"""
-
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -67,7 +63,6 @@ class Rectangle(Base):
 
     def y(self, value):
         """Setter for the y attribute"""
-
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -89,7 +84,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns the string representation of the rectangle instance"""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return ("[Rectangle] ({}) {}/{} - {}"
+                "/{}".format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **Kwargs):
         """Assigns an argument to each attribute of the Rectangle instance"""
