@@ -3,10 +3,15 @@
 class Base:
     """Base class for all other classes in this project"""
 
-    __nb_objects = 0
+    __nb_objects = i0
 
     def __init__(self, id=None):
-        """Constructor method for Base class"""
+        """
+        Initializes an instance of Base.
+
+        Args:
+            id (int): an integer to assign to the instance's id attribute.
+        """
 
         if id is not None:
             self.id = id
