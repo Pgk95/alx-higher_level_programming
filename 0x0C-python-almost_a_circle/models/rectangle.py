@@ -103,9 +103,3 @@ class Rectangle(Base):
         if len(args) == 0 or args is None:
             for key, value in Kwargs.items():
                 setattr(self, key, value)
-
-    def to_dictionary(self):
-        """
-        Method that returns the dictionary representation of a Rectangle
-        """
-        return {attr: getattr(self, attr) for attr in ['x', 'y', 'id', 'height', 'width']}
