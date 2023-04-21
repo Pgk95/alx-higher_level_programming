@@ -67,25 +67,12 @@ class Square(Rectangle):
             kwargs: A dictionary of the keyword arguments to update.
         """
         if args:
-            for i, arg in enumerate(args):
-                if i == 0:
-                    self.size = arg
-                elif i == 1:
-                    self.x = arg
-                elif i == 2:
-                    self.y = arg
-                elif i == 3:
-                    self.id = arg
+            attributes = ["id", "size", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
         else:
             for key, value in kwargs.items():
-                if key == 'size':
-                    self.size = value
-                elif key == 'x':
-                    self.x = value
-                elif key == 'y':
-                    self.y = value
-                elif key == 'id':
-                    self.id = value
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """
