@@ -1,2 +1,4 @@
--- displays the full description of the table first_table from specified database.
-SHOW CREATE TABLE 'first_table';
+-- Retrieve the table schema
+SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table';
