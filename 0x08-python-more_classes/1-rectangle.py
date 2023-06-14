@@ -8,9 +8,10 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def area(self):
-        return self.width * sellf.height
+    def height(self):
 
-    def perimeter(self):
         return 2 * (self.width + self.height)
 
+    def width(self):
+
+        return self.width * self.height
