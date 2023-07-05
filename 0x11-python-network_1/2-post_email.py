@@ -4,12 +4,13 @@ import urllib.request
 import urllib.parse
 import sys
 
-
-def send_post_request(url, email):
-    """
+  """
     sends a POST request to a given URL with the email.
     """
 
+
+def send_post_request(url, email):
+  
     data = urllib.parse.urlencode({'email': email}).encode('utf-8')
 
     with urllib.request.urlopen(url, data=data) as response:
