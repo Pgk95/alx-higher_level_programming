@@ -10,8 +10,6 @@ def main():
 
     with urllib.request.urlopen(url) as response:
         x_request_id = response.headers.get('X-Request-Id')
-
     print(x_request_id)
-
 if __name__ == "__main__":
     main()
