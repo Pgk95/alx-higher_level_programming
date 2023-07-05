@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-"""this script takes in a URL sends a
-request,get the header of the response"""
+"""dipslays the a value found in the header of the response"""
 
 import urllib.request
 import sys
